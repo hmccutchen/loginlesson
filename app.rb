@@ -14,7 +14,11 @@ p 'whatever'
 
 
 
+get '/login' do
 
+
+erb :login
+end
 
 
 
