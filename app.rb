@@ -8,14 +8,18 @@ set :database, 'sqlite3:loginlesson.sqlite3'
 
 
 get '/' do
-p 'whatever'
 @users = User.all
+
+erb :home
   end
 
 
 
-get '/login' do
 
+
+
+
+get '/login' do
 
 erb :login
 end
