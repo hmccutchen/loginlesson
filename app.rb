@@ -7,7 +7,7 @@ set :database, 'sqlite3:loginlesson.sqlite3'
 
 
 
-get '/' do
+get '/home' do
 @users = User.all
 
 erb :home
@@ -31,6 +31,12 @@ end
 post '/signup' do
 
 p params
+
+user = User.new(email: params[:email],
+                name: params[:full_name],
+                 password: params[:password])
+user.save
+redirect :home
 end
 
 
